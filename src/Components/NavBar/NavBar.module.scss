@@ -1,0 +1,23 @@
+.NavBar {
+  width: 100%;
+}
+
+.crumb {
+  padding: 10px 20px;
+  background-color: #5374d9;
+}
+
+.link {
+  padding: 10px 20px;
+  border-bottom-width: 0;
+  color: #a7b4dc;
+  transition: border-bottom-width 0.2s ease-in-out;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  & .active {
+    color: red;
+  }
+}

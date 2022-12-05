@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  max-width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 50%;
+}
