@@ -7,4 +7,6 @@ export {
   getCostsError,
   getIsCostsLoading,
   getCosts,
+  getBargainType,
+  getBargainVolume,
 } from "./selectors"

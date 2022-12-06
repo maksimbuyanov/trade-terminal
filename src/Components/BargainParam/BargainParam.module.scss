@@ -1,0 +1,40 @@
+.BargainParam {
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 600;
+  gap: 10px;
+  line-height: 40px;
+}
+
+.buy {
+  color: green;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+}
+
+.sell {
+  color: red;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+}
+
+.cost {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.label {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.input {
+  min-width: 40%;
+}

@@ -1,11 +1,15 @@
 import { RootState } from "../store"
 import { createSelector } from "@reduxjs/toolkit"
-import { costs, TradePair } from "./types"
+import { BargainType, costs, TradePair } from "./types"
 
 export const getSelectedTickerId = (state: RootState): number | null =>
   state.tickers.selectedPair
 export const getAllTickers = (state: RootState): TradePair[] =>
   state.tickers.pair
+export const getBargainVolume = (state: RootState): number =>
+  state.tickers.bargainVolume
+export const getBargainType = (state: RootState): BargainType | null =>
+  state.tickers.bargainType
 export const getCosts = (state: RootState): costs | null => state.tickers.costs
 export const getIsCostsLoading = (state: RootState): boolean =>
   state.tickers.isCostsLoading

@@ -2,8 +2,10 @@ import { Currency, Trade_action } from "../../Shared/types/Currency"
 
 export interface costs {
   buy: number
-  sale: number
+  sell: number
 }
+
+export type BargainType = "buy" | "sell"
 
 export interface tickersSchema {
   pair: TradePair[]
@@ -11,6 +13,8 @@ export interface tickersSchema {
   isCostsLoading: boolean
   error: string | null
   costs: costs | null
+  bargainType: BargainType | null
+  bargainVolume: number
 }
 
 export interface TradePair {

@@ -13,7 +13,7 @@ export const fetchTickersPrice = createAsyncThunk(
       return await new Promise<costs>(resolve => {
         setTimeout(() => {
           resolve({
-            sale: Math.random() * multiplicator + 1,
+            sell: Math.random() * multiplicator + 1,
             buy: Math.random() * multiplicator + 1,
           })
         }, 500)

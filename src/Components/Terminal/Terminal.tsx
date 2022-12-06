@@ -9,6 +9,7 @@ import {
   getSelectedTickerId,
 } from "../../Redux/Tickers/selectors"
 import { fetchTickersPrice, tickersActions } from "../../Redux/Tickers"
+import { createTickerLabel } from "../../Shared/lib/createTickerLabel"
 
 interface TerminalProps {
   className?: string
@@ -30,7 +31,7 @@ export const Terminal: FC<TerminalProps> = props => {
     return pairs.map(item => {
       return {
         value: item.id,
-        label: `${item.prevCurrency}/${item.nextCurrency}${item.tradeAction}`,
+        label: createTickerLabel(item),
       }
     })
   }, [pairs])
