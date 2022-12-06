@@ -1,8 +1,14 @@
-import { FC, memo, useMemo, useState } from "react"
+import { FC, memo, useCallback, useMemo } from "react"
 import cls from "./Terminal.module.scss"
 import { Select } from "antd"
-import { generateSelectValues } from "../../../src/Shared/mock/generateSelectValues"
-import { Clock } from "./Clock"
+import { Clock } from "../Clock"
+import { Actions } from "../Actions"
+import { useAppDispatch, useAppSelector } from "../../Redux/hooks"
+import {
+  getAllTickers,
+  getSelectedTickerId,
+} from "../../Redux/Tickers/selectors"
+import { fetchTickersPrice, tickersActions } from "../../Redux/Tickers"
 
 interface TerminalProps {
   className?: string
@@ -10,33 +16,42 @@ interface TerminalProps {
 
 export const Terminal: FC<TerminalProps> = props => {
   const { className = "" } = props
-  const [select, setSelect] = useState(generateSelectValues())
+  const pairs = useAppSelector(getAllTickers)
+  const selectedPair = useAppSelector(getSelectedTickerId)
+  const dispatch = useAppDispatch()
+  const onChangeSelect = useCallback(
+    (id: number) => {
+      dispatch(tickersActions.selectPair(id))
+      void dispatch(fetchTickersPrice())
+    },
+    [dispatch]
+  )
   const options = useMemo(() => {
-    return select.map(item => {
+    return pairs.map(item => {
       return {
-        value: `${item.prevCurrency}/${item.nextCurrency}${item.tradeAction}`,
+        value: item.id,
         label: `${item.prevCurrency}/${item.nextCurrency}${item.tradeAction}`,
       }
     })
-  }, [select])
+  }, [pairs])
 
   return (
-    <div className={`${cls.Terminal} ${className}`}>
+    <section className={`${cls.Terminal} ${className}`}>
       <Clock className={cls.time} />
       <Select
+        className={cls.select}
         showSearch
-        placeholder="Select a person"
+        placeholder="Select a pair"
         optionFilterProp="children"
-        // onChange={onChange}
-        // onSearch={onSearch}
-        // filterOption={filter}
+        value={selectedPair}
+        onChange={onChangeSelect}
+        filterOption={(input, option) =>
+          (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
+        }
         options={options}
       />
-    </div>
+      <Actions />
+    </section>
   )
 }
 export default memo(Terminal)
-
-function filter(input: string, option: Record<string, string>): boolean {
-  return (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
-}

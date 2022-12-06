@@ -8,8 +8,8 @@ interface ClockProps {
 
 export const Clock: FC<ClockProps> = props => {
   const { className = "" } = props
-
-  const [time, setTime] = useState<number>(0)
+  const [time, setTime] = useState<number>(Date.now())
+  const invisibleValue = time === 0 ? cls.invisible : ""
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(Date.now())
@@ -18,5 +18,9 @@ export const Clock: FC<ClockProps> = props => {
       clearInterval(interval)
     }
   }, [])
-  return <div className={className}>{parseTimestampToTime(time)}</div>
+  return (
+    <div className={`${className} ${invisibleValue}`}>
+      {parseTimestampToTime(time)}
+    </div>
+  )
 }

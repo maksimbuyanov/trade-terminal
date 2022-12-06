@@ -1,13 +1,17 @@
-import { TradeTwice } from "../types/TradeTwice"
+import { TradePair } from "../../Redux/Tickers/types"
 import { Currency, Trade_action } from "../types/Currency"
 
-export const generateSelectValues = (): TradeTwice[] => {
-  return Object.values(Currency).reduce<TradeTwice[]>(
+const tradeActionsValues = Object.values(Trade_action)
+
+export const generateSelectValues = (): TradePair[] => {
+  return Object.values(Currency).reduce<TradePair[]>(
     (accum, currency, index, array) => {
-      const item: TradeTwice = {
+      const actionsIndex = index % 3
+      const item: TradePair = {
         prevCurrency: currency,
-        tradeAction: index % 2 ? Trade_action.SPOT : Trade_action.TOM,
+        tradeAction: tradeActionsValues[actionsIndex],
         nextCurrency: index + 1 === array.length ? array[0] : array[index + 1],
+        id: index,
       }
       accum.push(item)
       return accum

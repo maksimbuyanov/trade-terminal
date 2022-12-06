@@ -1,0 +1,30 @@
+.Actions {
+  display: flex;
+  gap: 60px;
+}
+
+.buy {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  color: green;
+}
+
+.sale {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  color: red;
+}
+
+.price {
+  color: inherit;
+  font-size: 32px;
+}
+
+.title {
+  color: inherit;
+  font-size: 40px;
+}
