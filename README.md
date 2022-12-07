@@ -1,4 +1,4 @@
-# Установка проекта
+# Посмотреть в живую
 
 Можно посмотреть на  [github pages](https://maksimbuyanov.github.io/trade-terminal/)
 
