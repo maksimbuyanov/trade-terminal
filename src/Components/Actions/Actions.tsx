@@ -1,17 +1,17 @@
 import { FC, memo, useCallback, useEffect, useState } from "react"
 import cls from "./Actions.module.scss"
-import { Button, Modal, Typography } from "antd"
-import { useAppDispatch, useAppSelector } from "../../Redux/hooks"
+import { Button, Typography } from "antd"
+import { useAppDispatch, useAppSelector } from "Redux/hooks"
 import {
   fetchTickersPrice,
   getCosts,
-  getCostsError,
   getIsCostsLoading,
+  getCostsError,
   tickersActions,
-} from "../../Redux/Tickers"
+} from "Redux/Tickers"
 import { BargainParam } from "../BargainParam"
-import { BargainType } from "../../Redux/Tickers/types"
-import { CHAR_AFTER_DOT, REFRESH_COSTS_INTERVAL } from "../../Shared/constants"
+import { BargainType } from "Redux/Tickers/types"
+import { CHAR_AFTER_DOT, REFRESH_COSTS_INTERVAL } from "Shared/constants"
 
 interface ActionsProps {
   className?: string

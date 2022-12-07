@@ -1,4 +1,4 @@
-import { Currency, Trade_action } from "../../Shared/types/Currency"
+import { Currency, Trade_action } from "Shared/types/Currency"
 
 export interface costs {
   buy: number
@@ -15,6 +15,7 @@ export interface tickersSchema {
   costs: costs | null
   bargainType: BargainType | null
   bargainVolume: number
+  bargainList: Bargain[]
 }
 
 export interface TradePair {
@@ -22,4 +23,12 @@ export interface TradePair {
   nextCurrency: Currency
   tradeAction: Trade_action
   id: number
+}
+
+export interface Bargain {
+  cost: number
+  volume: number
+  type: BargainType
+  selectedPair: TradePair
+  timestamp: number
 }

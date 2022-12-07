@@ -1,7 +1,6 @@
-import { Layout } from "antd"
 import { CSSProperties, FC, memo } from "react"
 import cls from "./NavBar.module.scss"
-import { NavLink, useLocation } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { Header } from "antd/es/layout/layout"
 
 // const { Header, Content, Footer } = Layout

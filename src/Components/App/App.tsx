@@ -5,6 +5,7 @@ import { NotFoundPage } from "../NotFoundPage"
 import { NavBar } from "../NavBar"
 import { Card } from "antd"
 import { Terminal } from "../Terminal"
+import { Archive } from "Components/Archive"
 
 const App: FC = () => {
   return (
@@ -12,7 +13,7 @@ const App: FC = () => {
       <Card className={cls.card} title={<NavBar />}>
         <Routes>
           <Route path="/" element={<Terminal />} />
-          <Route path="/archive" element={<div>2</div>} />
+          <Route path="/archive" element={<Archive />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Card>

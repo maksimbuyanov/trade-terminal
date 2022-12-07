@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { generateSelectValues } from "../../Shared/mock/generateSelectValues"
-import { fetchTickersPrice } from "./services"
-import { BargainType, tickersSchema } from "./types"
+import { generateSelectValues } from "Shared/mock/generateSelectValues"
+import { Bargain, BargainType, tickersSchema } from "./types"
+import { fetchTickersPrice } from "./services/fetchTickersPrice"
 
 const initialState: tickersSchema = {
   pair: generateSelectValues(),
@@ -11,6 +11,7 @@ const initialState: tickersSchema = {
   error: null,
   bargainType: null,
   bargainVolume: 0,
+  bargainList: [],
 }
 
 const tickers = createSlice({
@@ -25,6 +26,9 @@ const tickers = createSlice({
     },
     setBargainVolume: (state, action: PayloadAction<number>) => {
       state.bargainVolume = action.payload
+    },
+    saveBargain: (state, action: PayloadAction<Bargain>) => {
+      state.bargainList.push(action.payload)
     },
   },
   extraReducers: builder => {

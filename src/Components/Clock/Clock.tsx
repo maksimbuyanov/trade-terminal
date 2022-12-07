@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react"
 import cls from "./Clock.module.scss"
-import { parseTimestampToTime } from "../../Shared/lib/parseTimestampToTime"
+import { parseTimestampToTime } from "Shared/lib/parseTimestampToTime"
 
 interface ClockProps {
   className?: string

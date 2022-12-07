@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { getSelectedTickers } from "./selectors"
-import { RootState } from "../store"
-import { costs } from "./types"
+import { getSelectedTickers } from "Redux/Tickers/selectors"
+import { RootState } from "Redux/store"
+import { costs } from "Redux/Tickers/types"
 
 export const fetchTickersPrice = createAsyncThunk(
   "tickers/fetchTickersPrice",

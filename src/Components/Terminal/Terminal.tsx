@@ -3,13 +3,14 @@ import cls from "./Terminal.module.scss"
 import { Select } from "antd"
 import { Clock } from "../Clock"
 import { Actions } from "../Actions"
-import { useAppDispatch, useAppSelector } from "../../Redux/hooks"
+import { useAppDispatch, useAppSelector } from "Redux/hooks"
 import {
+  fetchTickersPrice,
   getAllTickers,
   getSelectedTickerId,
-} from "../../Redux/Tickers/selectors"
-import { fetchTickersPrice, tickersActions } from "../../Redux/Tickers"
-import { createTickerLabel } from "../../Shared/lib/createTickerLabel"
+} from "Redux/Tickers"
+import { tickersActions } from "Redux/Tickers/slice"
+import { createTickerLabel } from "Shared/lib/createTickerLabel"
 
 interface TerminalProps {
   className?: string
