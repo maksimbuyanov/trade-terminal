@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/trade-terminal/static/css/main.175da745.css",
-    "main.js": "/trade-terminal/static/js/main.7ac7a267.js",
+    "main.js": "/trade-terminal/static/js/main.00730c44.js",
     "static/media/Montserrat-ThinItalic.woff": "/trade-terminal/static/media/Montserrat-ThinItalic.150c8668879890a2f990.woff",
     "static/media/Montserrat-ThinItalic.woff2": "/trade-terminal/static/media/Montserrat-ThinItalic.bfbca512bd6336fd0035.woff2",
     "static/media/Montserrat-ExtraBoldItalic.woff": "/trade-terminal/static/media/Montserrat-ExtraBoldItalic.d15ede3aba5c364cac32.woff",
@@ -40,10 +40,10 @@
     "static/media/Montserrat-Thin.woff2": "/trade-terminal/static/media/Montserrat-Thin.438db3e97a2899f3cad1.woff2",
     "index.html": "/trade-terminal/index.html",
     "main.175da745.css.map": "/trade-terminal/static/css/main.175da745.css.map",
-    "main.7ac7a267.js.map": "/trade-terminal/static/js/main.7ac7a267.js.map"
+    "main.00730c44.js.map": "/trade-terminal/static/js/main.00730c44.js.map"
   },
   "entrypoints": [
     "static/css/main.175da745.css",
-    "static/js/main.7ac7a267.js"
+    "static/js/main.00730c44.js"
   ]
 }
