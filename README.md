@@ -1,4 +1,4 @@
-# Посмотреть в живую
+# Посмотреть онлайн
 
 Можно посмотреть на  [github pages](https://maksimbuyanov.github.io/trade-terminal/)
 
